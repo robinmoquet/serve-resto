@@ -10,6 +10,7 @@ interface ReturnVal {
 	avg?: number;
 }
 
+let emit: (x: number, y: ReturnVal) => ReturnVal; 
 
 export default class RestoManager {
 
@@ -82,7 +83,7 @@ export default class RestoManager {
 			);
                 
 			// ici on ordonne et on slice les 5 meilleurs restos
-			top.push(cursor.sort((a: ReturnVal, b: ReturnVal) => a.avg - b.avg < 0).slice(0,5))
+			top.push(cursor.sort((a: ReturnVal, b: ReturnVal) => (<number>a.avg - <number>b.avg) < 0).slice(0,5))
 		}
             
 		return top;
