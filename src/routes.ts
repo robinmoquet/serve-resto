@@ -15,4 +15,9 @@ export const routes: Array<Route> = [
         method: 'get',
         action: baseController.testConnection,
     },
+    {
+        path: '/resto-5',
+        method: 'get',
+        action: baseController.getFiveBestResto,
+    },
 ];
