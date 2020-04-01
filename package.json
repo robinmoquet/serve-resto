@@ -1,0 +1,37 @@
+{
+  "name": "eronn-pass-mailer",
+  "version": "0.0.1",
+  "description": "Microservice pour l'envoi d'emails pour le projet Eronn Pass",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "npx jest",
+    "dev": "concurrently -k -n \"Typescript,Node\" -p \"[{name}]\" -c \"blue,green\" \"tsc --watch\" \"nodemon dist/index.js\"",
+    "start": "tsc && node dist/index.js",
+    "prettier": "prettier --config ./.prettierrc --write \"./src/**/*.ts\"",
+    "build": "tsc",
+    "pre-commit": "npm run prettier && npm run test"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run pre-commit"
+    }
+  },
+  "author": "Robin Moquet",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/koa": "^2.11.2",
+    "@types/koa-bodyparser": "^4.3.0",
+    "@types/koa-router": "^7.4.0",
+    "@types/node": "^13.7.7",
+    "@types/nodemailer": "^6.4.0",
+    "concurrently": "^5.1.0",
+    "nodemon": "^2.0.2",
+    "prettier": "^1.19.1",
+    "typescript": "^3.8.3"
+  },
+  "dependencies": {
+    "koa": "^2.11.0",
+    "koa-bodyparser": "^4.2.1",
+    "koa-router": "^8.0.8"
+  }
+}

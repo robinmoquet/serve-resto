@@ -1,0 +1,9 @@
+###> Global to exclude <###
+.DS_Store
+.idea
+
+###> Node NPM <###
+/node_modules
+npm-debug.log
+
+/dist
